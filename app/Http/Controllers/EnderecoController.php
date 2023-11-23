@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Http;
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
+use App\Http\Requests\Endereco\SalvarRequest;
 
 class EnderecoController extends Controller{
     
@@ -26,8 +27,8 @@ class EnderecoController extends Controller{
                 ]
             );
     }
-    public function salvar(){
-        
+    public function salvar(SalvarRequest $request){
+            dd($request->all());
     }
 
 }

@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +8,15 @@
 </head>
 <body class="container-fluid vw-75">
   <h3>Adicionar Cep</h3>
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
   <form action="{{  route('salvar') }}" method="POST">
     @csrf
     <div class="mb-3">
